@@ -18,7 +18,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'resources/views'))
 
 //SASS render
-sass.render({file: 'app.scss'})
+
 
 //Home Page
 app.get('/', (req, res) => {
