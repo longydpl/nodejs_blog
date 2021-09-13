@@ -2,6 +2,7 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const exphbs = require('express-handlebars')
+const sass = require('node-sass')
 const app = express()
 const port = 3000
 
@@ -15,6 +16,9 @@ app.use(morgan('combined'))
 app.engine('hbs', exphbs({extname: '.hbs'}));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname,'resources/views'))
+
+//SASS render
+sass.render({file: 'app.scss'})
 
 //Home Page
 app.get('/', (req, res) => {
